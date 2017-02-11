@@ -30,6 +30,21 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if(!name) {
+      return;
+    }
+    this.heroService.create(name)
+      .then(hero => {
+        this.heroes.push(hero);
+        this.selectedHero = null;
+      });
+  }
+
+
+
+
   selectedHero: Hero;
   heroes : Hero[];
   onSelect(hero: Hero): void {
