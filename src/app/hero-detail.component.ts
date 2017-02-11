@@ -16,6 +16,7 @@ import "rxjs/add/operator/switchMap";
     <input [(ngModel)]="hero.name" placeholder="name">
   </div>
 </div>
+<button (click)="goBack()">Back</button>
 `
 })
 
@@ -33,5 +34,9 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) {
 
+  }
+
+  goBack() : void {
+    this.location.back();
   }
 }
