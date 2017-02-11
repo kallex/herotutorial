@@ -30,7 +30,10 @@ export class HeroService {
   }
 
   getHero(id: number) : Promise<Hero> {
-    return this.getHeroes()
-      .then(heroes => heroes.find(hero => hero.id === id));
+    const url = `${this.heroesurl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data as Hero)
+      .catch(this.handleError);
   }
 }
