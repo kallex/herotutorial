@@ -20,6 +20,16 @@ export class HeroService {
       .catch(this.handleError);
   }
 
+  /*
+  async getHeroesx() : Promise<Hero[]> {
+    var response = await this.http.get(this.heroesurl)
+      .toPromise();
+    return
+      response.json().data as Hero[];
+  }
+  */
+
+
   private handleError(error:any) : Promise<any> {
     console.error("An error occurred", error);
     return Promise.reject(error.message || error);
