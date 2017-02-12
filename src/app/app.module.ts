@@ -13,6 +13,7 @@ import {DashboardComponent} from "./dashboard.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {InMemoryDataService} from "./in-memory-data.service";
 import {HeroSearchComponent} from "./hero-search.component";
+import {HeroFormComponent} from "./hero-form.component";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {HeroSearchComponent} from "./hero-search.component";
     DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    HeroFormComponent
   ],
   providers: [ HeroService],
   bootstrap: [AppComponent]
