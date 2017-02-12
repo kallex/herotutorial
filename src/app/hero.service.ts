@@ -13,22 +13,18 @@ export class HeroService {
 
   }
 
-  getHeroes(): Promise<Hero[]> {
+  async getHeroes() : Promise<Hero[]> {
+    var response = await this.http.get(this.heroesurl)
+      .toPromise();
+    return response.json().data as Hero[];
+  }
+
+  getHeroesx(): Promise<Hero[]> {
     return this.http.get(this.heroesurl)
       .toPromise()
       .then(response => response.json().data as Hero[])
       .catch(this.handleError);
   }
-
-  /*
-  async getHeroesx() : Promise<Hero[]> {
-    var response = await this.http.get(this.heroesurl)
-      .toPromise();
-    return
-      response.json().data as Hero[];
-  }
-  */
-
 
   private handleError(error:any) : Promise<any> {
     console.error("An error occurred", error);
