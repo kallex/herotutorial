@@ -10,7 +10,6 @@ import {Router} from "@angular/router";
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
 })
-
 export class HeroesComponent implements OnInit {
   ngOnInit(): void {
     this.getHeroes();

@@ -11,7 +11,6 @@ import {Router} from "@angular/router";
   styleUrls: [ "./heroes.component.css"],
   providers: [HeroSearchService]
 })
-
 export class HeroSearchComponent implements OnInit {
   heroes: Observable<Hero[]>;
   private searchTerms = new Subject<string>();
