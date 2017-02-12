@@ -5,7 +5,8 @@
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" required
-      [(ngModel)]="model.name" name="name">
+      [(ngModel)]="model.name" name="name" #spy>
+      <br>TODO: remove this: {{spy.className}}
     </div>
     <div class="form-group">
       <label for="alterEgo">Alter Ego</label>
